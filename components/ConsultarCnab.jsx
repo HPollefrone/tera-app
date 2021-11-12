@@ -9,7 +9,7 @@ export default function ConsultarCnab() {
 
   return (
     <>
-      <div className="p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+      <div className="p-4 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
         <div className="row">
           <div className="col-lg-7 p-3 p-lg-5 pt-lg-3">
             <h1 className="display-4 fw-bold lh-1">Consultar CNAB</h1>

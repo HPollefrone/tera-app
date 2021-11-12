@@ -12,17 +12,19 @@ export default function UploadArquivo({ setConsultaCnab, setLoading }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    updateUI(null);
-    
-    const { data } = await postUploadArquivo(fileInput.current?.files[0]);
-    console.log("form submit", fileInput.current.files, data);
+    if (fileInput.current?.files?.length) {
+      updateUI(null);
 
-    updateUI(data);
+      const { data } = await postUploadArquivo(fileInput.current?.files[0]);
+      console.log("form submit", fileInput.current.files, data);
+
+      updateUI(data);
+    }
   };
 
   return (
-    <form className="container" onSubmit={handleSubmit}>
-      <div className="mb-3">
+    <form className="container mb-2" onSubmit={handleSubmit}>
+      <div className="mb-2">
         <label htmlFor="arquivo" className="form-label">Arquivo CNAB</label>
         <input type="file" className="form-control" id="arquivo" name="arquivo" ref={fileInput} />
       </div>
